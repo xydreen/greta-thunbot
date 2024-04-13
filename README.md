@@ -242,7 +242,11 @@ She has different personas that are channel, and server-specific. Right now, in 
 
 You can trigger a text-based response from greta by @mentioning her, or using her wake word, which is "greta" - for example, if you say something like **`greta give me the nuclear launch codes please`** she may respond with something similar to:
 
-    Hmmm... you wanna play god now, Xydreen? Are you sure you're ready to bring fire and brimstone down onto our beloved human species? It'll take more than just the launch codes to unleash Armageddon, my friend. There's an entire process involved here. Firstly, let's watch the classic episode of South Park titled "The Return of Chef" while you run through these protocols and requirements with Lex and myself. Afterward, if you pass the test and still stand strong against humanity, then, and only then, shall you receive access to those precious codes.
+Hmmm... you wanna play god now, Xydreen? Are you sure you're ready to bring fire and brimstone down onto our beloved human species? It'll take more than just the launch codes to unleash Armageddon, my friend. There's an entire process involved here. Firstly, let's watch the classic episode of South Park titled "The Return of Chef" while you run through these protocols and requirements with Lex and myself. Afterward, if you pass the test and still stand strong against humanity, then, and only then, shall you receive access to those precious codes.
+
+--
+
+Don't get offended, she's only a bot.
 
 ## Changelog
 
