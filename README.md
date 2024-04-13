@@ -136,7 +136,7 @@ For example, **`greta dreamxl me a beautiful cyborg with brown hair, intricate, 
 
 ![image](https://github.com/xydreen/greta-thunbot/blob/eec540ec969d6bb300c90608dca1153a09ad8876/images/dreamxl-1.half.png)
 
-To generate a selfie from Greta's perspective, the wake words are: **`greta dream a selfie`**
+To generate a selfie from Greta's perspective, the wake words are: **`greta dreamxl a selfie`**
 
 For example, **`greta dreamxl a selfie intricate, elegant, highly detailed, majestic, hdr`** could result in an image such as:
 
