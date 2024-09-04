@@ -148,7 +148,7 @@ The current default generation parameters for this method are as follows:
     hr_upscaler: 8x_NMKD-Superscale_150000_G
     hr_second_pass_steps: 5
 
-Click on the model link at the beginning of this section to see various examples of images generated using method. Many of these images include the prompt and parameters used for the image generation.
+Click on the model link at the beginning of this section to see various examples of images generated using this method. Many of these images include the prompt and parameters used for the image generation.
 
 ## Artistic/Cartoon/Anime Image Generation Method (SDXL Turbo Method)
 
