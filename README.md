@@ -19,7 +19,7 @@ For this method, Greta currently utilizes the [Flux1 Dev BNB NF4 v2](https://hug
 
 The wake words to activate this method are: **`greta fluxd me`**
 
-For example, **`greta fluxd me a cat, photorealisticr`** could result in an image such as:
+For example, **`greta fluxd me a cat, photorealistic`** could result in an image such as:
 
 ![image](https://github.com/xydreen/greta-thunbot/blob/5fb8c658f5c9b0c1c52739a3ff504ecd205eff87/images/fluxd.s.png)
 
