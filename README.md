@@ -21,7 +21,7 @@ The wake words to activate this method are: **`greta fluxd me`**
 
 For example, **`greta fluxd me a woman in winter`** could result in an image such as:
 
-![image](https://github.com/xydreen/greta-thunbot/blob/bdaa1b34699a811cec2d210ce067eff038a85ee1/images/rv5.s.png)
+![image](https://github.com/xydreen/greta-thunbot/blob/5fb8c658f5c9b0c1c52739a3ff504ecd205eff87/images/fluxd.s.png)
 
 The current default generation parameters for this method are as follows:
 
