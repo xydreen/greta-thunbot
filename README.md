@@ -73,7 +73,7 @@ The current default generation parameters for this method are as follows:
     hr_upscaler: ""
     hr_second_pass_steps: 5
 
-Check out [civit.ai]((https://civitai.com/) for flux schnell image generation examples using the model.
+Check out [civit.ai](https://civitai.com/) for flux schnell image generation examples using the model.
 
 ## Realistic Image Generation Method (SDXL Turbo/Lightning Method)
 
