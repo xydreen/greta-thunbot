@@ -89,7 +89,7 @@ To generate a selfie from Greta's perspective, the wake words are: **`greta take
 
 For example, **`greta take a selfie in winter`** could result in an image such as:
 
-![image](https://github.com/xydreen/greta-thunbot/blob/bdaa1b34699a811cec2d210ce067eff038a85ee1/images/rv5.s.png)
+![image](https://github.com/xydreen/greta-thunbot/blob/eef207103222bf9283a9f6daf7dfe5aaab9abeb8/images/rv5s.s.png)
 
 The current default generation parameters for this method are as follows:
 
