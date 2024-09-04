@@ -50,7 +50,7 @@ For this method, Greta currently utilizes the [Flux1 Schnell BNB NF4](https://hu
 
 The wake words to activate this method are: **`greta fluxs me`**
 
-For example, **`greta fluxs me a woman in winter`** could result in an image such as:
+For example, **`greta fluxs me a cat, photorealistic`** could result in an image such as:
 
 ![image](https://github.com/xydreen/greta-thunbot/blob/84091ea123ea5ef7191cc1b7278968e0d746e96e/images/fluxs.s.png)
 
