@@ -5,7 +5,7 @@ This document serves as a general reference for the **Greta Thunbot** generative
 
 Greta is activated, generally, by wake words. To trigger a response from Greta, review the individual sections below to see how to do so.
 
-Greta is hosted on hardware (utilizing two RTX 3090s) provided by zcomputerwiz, and is using highly modified [oobabot](https://github.com/chrisrude/oobabot) code written by xydreen.
+Greta is hosted on hardware ~~(utilizing two RTX 3090s) provided by zcomputerwiz (he smothered the hardware with a pillow)~~ utilizing a single RTX 4090, and is using highly modified [oobabot](https://github.com/chrisrude/oobabot) code written by xydreen.
 
 ## Image Generation Basics
 
@@ -13,21 +13,15 @@ Greta's image generation capabilities come from feeding text-based prompts and p
 
 Greta currently has multiple methods available for generating images. While each method can produce a wide range of results, and you can experiment with the same prompt on each method, you should choose based on your needs...
 
-## Realistic Image Generation Method (SDXL Turbo/Lightning Method)
+## Flux Dev Image Generation Method
 
-To do realistic images, Greta currently utilizes the [RealVisXL V4.0 Lightning](https://civitai.com/models/139562?modelVersionId=361593) model.
+For this method, Greta currently utilizes the [Flux1 Dev BNB NF4 v2](https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4) model.
 
-The wake words to activate this method are: **`greta draw me`**
+The wake words to activate this method are: **`greta fluxd me`**
 
-For example, **`greta draw me a woman in winter`** could result in an image such as:
+For example, **`greta fluxd me a woman in winter`** could result in an image such as:
 
-![image](https://github.com/xydreen/greta-thunbot/blob/171c496cf60331c07ce46df18b8c1cdccd8179ff/images/realvis-1.half.png)
-
-To generate a selfie from Greta's perspective, the wake words are: **`greta take a selfie`**
-
-For example, **`greta take a selfie in winter`** could result in an image such as:
-
-![image](https://github.com/xydreen/greta-thunbot/blob/171c496cf60331c07ce46df18b8c1cdccd8179ff/images/realvis-2.half.png)
+![image](https://github.com/xydreen/greta-thunbot/blob/bdaa1b34699a811cec2d210ce067eff038a85ee1/images/rv5.s.png)
 
 The current default generation parameters for this method are as follows:
 
@@ -35,12 +29,80 @@ The current default generation parameters for this method are as follows:
     do_not_save_samples: true
     do_not_save_grid: true
     enable_hr: false
-    model: realvisxlV40_oFmv
+    model: flux1-dev-bnb-nf4-v2
+    negative_prompt: ""
+    negative_prompt_nsfw: ""
+    sampler_name: Euler
+    seed: -1
+    steps: 20
+    width: 1280
+    height: 896
+    denoising_strength: 0.25
+    hr_scale: 2
+    hr_upscaler: ""
+    hr_second_pass_steps: 5
+
+Check out [civit.ai](https://www.civit.ai/) for flux dev image generation examples using the model.
+
+## Flux Schnell Image Generation Method
+
+For this method, Greta currently utilizes the [Flux1 Schnell BNB NF4](https://huggingface.co/silveroxides/flux1-nf4-weights) model.
+
+The wake words to activate this method are: **`greta fluxs me`**
+
+For example, **`greta fluxs me a woman in winter`** could result in an image such as:
+
+![image](https://github.com/xydreen/greta-thunbot/blob/84091ea123ea5ef7191cc1b7278968e0d746e96e/images/fluxs.s.png)
+
+The current default generation parameters for this method are as follows:
+
+    cfg_scale: 1
+    do_not_save_samples: true
+    do_not_save_grid: true
+    enable_hr: false
+    model: flux1-schnell-bnb-nf4
+    negative_prompt: ""
+    negative_prompt_nsfw: ""
+    sampler_name: Euler
+    seed: -1
+    steps: 4
+    width: 1280
+    height: 896
+    denoising_strength: 0.25
+    hr_scale: 2
+    hr_upscaler: ""
+    hr_second_pass_steps: 5
+
+Check out [civit.ai](https://www.civit.ai/) for flux schnell image generation examples using the model.
+
+## Realistic Image Generation Method (SDXL Turbo/Lightning Method)
+
+To do realistic images, Greta currently utilizes the [RealVisXL V5.0 Lightning](https://civitai.com/models/139562/realvisxl-v50) model.
+
+The wake words to activate this method are: **`greta draw me`**
+
+For example, **`greta draw me a woman in winter`** could result in an image such as:
+
+![image](https://github.com/xydreen/greta-thunbot/blob/bdaa1b34699a811cec2d210ce067eff038a85ee1/images/rv5.s.png)
+
+To generate a selfie from Greta's perspective, the wake words are: **`greta take a selfie`**
+
+For example, **`greta take a selfie in winter`** could result in an image such as:
+
+![image](https://github.com/xydreen/greta-thunbot/blob/bdaa1b34699a811cec2d210ce067eff038a85ee1/images/rv5.s.png)
+
+The current default generation parameters for this method are as follows:
+
+    cfg_scale: 1.5
+    do_not_save_samples: true
+    do_not_save_grid: true
+    enable_hr: false
+    model: realvisxlV50_v50LightningBakedvae
     negative_prompt: "(worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch), open mouth"
     negative_prompt_nsfw: "(worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch), open mouth"
     sampler_name: DPM++ SDE
     seed: -1
-    steps: 5
+    steps: 7
     width: 1280
     height: 896
     denoising_strength: 0.25
@@ -76,7 +138,7 @@ The current default generation parameters for this method are as follows:
     model: dreamshaper_8
     negative_prompt: "BadDream, (UnrealisticDream:1.2)"
     negative_prompt_nsfw: "BadDream, (UnrealisticDream:1.2)"
-    sampler_name: DPM++ SDE Karras
+    sampler_name: DPM++ SDE
     seed: -1
     steps: 30
     width: 640
@@ -90,38 +152,38 @@ Click on the model link at the beginning of this section to see various examples
 
 ## Artistic/Cartoon/Anime Image Generation Method (SDXL Turbo Method)
 
-To do artistic, cartoon and anime images, Greta currently utilizes the SDXL TURBO PLUS - RED TEAM model.
+To do artistic, cartoon and anime images, Greta currently utilizes the [Juggernaut XL](https://civitai.com/models/133005/juggernaut-xl) model.
 
 The wake words to activate this method are: **`greta create me`**
 
 For example, **`greta create me cinematic lighting, 1girl, soaked, long curly black hair, red detailed eyes, eye contact, forest, sakura leafs`** could result in an image such as:
 
-![image](https://github.com/xydreen/greta-thunbot/blob/a364ac1f5cf1986f637a1e0d4cf76310aa2e4492/images/redteam-1.half.png)
+![image](https://github.com/xydreen/greta-thunbot/blob/84091ea123ea5ef7191cc1b7278968e0d746e96e/images/jxl.s.png)
 
 To generate a selfie from Greta's perspective, the wake words are: **`greta create a selfie`**
 
 For example, **`greta create a selfie with a pig`** could result in an image such as:
 
-![image](https://github.com/xydreen/greta-thunbot/blob/a364ac1f5cf1986f637a1e0d4cf76310aa2e4492/images/redteam-2.half.png)
+![image](https://github.com/xydreen/greta-thunbot/blob/84091ea123ea5ef7191cc1b7278968e0d746e96e/images/jxls.s.png)
 
 The current default generation parameters for this method are as follows:
 
-    cfg_scale: 5
+    cfg_scale: 4
     do_not_save_samples: true
     do_not_save_grid: true
     enable_hr: false
     clip_skip: 2
-    model: sdxlTURBOPLUSREDTEAMMODEL_
+    model: juggernautXI
     negative_prompt: "bad quality, bad anatomy, worst quality, low quality, low resolution, extra fingers, blur, blurry, ugly, wrong proportions, watermark, image artifacts, lowres, ugly, jpeg artifacts, deformed, noisy image"
     negative_prompt_nsfw: "bad quality, bad anatomy, worst quality, low quality, low resolution, extra fingers, blur, blurry, ugly, wrong proportions, watermark, image artifacts, lowres, ugly, jpeg artifacts, deformed, noisy image"
     sampler_name: Euler a
     seed: -1
-    steps: 10
+    steps: 35
     width: 1280
     height: 896
     denoising_strength: 0.3
     hr_scale: 2
-    hr_upscaler: RealESRGAN_x4plus_anime_6B
+    hr_upscaler: 8x_NMKD-Superscale_150000_G
     hr_second_pass_steps: 5
 
 The red team model was removed from CivitAI for some reason a few months ago, so there are not many examples of it out there. YMMV.
@@ -171,13 +233,13 @@ The wake words to activate this method are: **`greta ponyxl me`**
 
 For example, **`greta ponyxl me a beautiful cyborg with brown hair, intricate, elegant, highly detailed, majestic`** could result in an image such as:
 
-![image](https://github.com/xydreen/greta-thunbot/blob/eec540ec969d6bb300c90608dca1153a09ad8876/images/dreamxl-1.half.png)
+![image](https://github.com/xydreen/greta-thunbot/blob/84091ea123ea5ef7191cc1b7278968e0d746e96e/images/pony.s.png)
 
 To generate a selfie from Greta's perspective, the wake words are: **`greta ponyxl a selfie`**
 
 For example, **`greta ponyxl a selfie intricate, elegant, highly detailed, majestic, hdr`** could result in an image such as:
 
-![image](https://github.com/xydreen/greta-thunbot/blob/eec540ec969d6bb300c90608dca1153a09ad8876/images/dreamxl-2.half.png)
+![image](https://github.com/xydreen/greta-thunbot/blob/84091ea123ea5ef7191cc1b7278968e0d746e96e/images/ponys.s.png)
 
 The current default generation parameters for this method are as follows:
 
@@ -220,6 +282,8 @@ There are many parameters you can fine-tune by adding them to your prompt. Here 
     clip_skip
     hr_second_pass_steps
 
+**Please note**, for the flux models, some of these settings are disabled.
+
 For example, let's say your prompt is: **`greta dream me a pig`**
 
 By default, Greta will generate landscape-style images. So, from the above prompt, you may receive something like:
@@ -236,13 +300,13 @@ Changing the orientation (landscape vs portrait) of an image generation can dram
 
 ## Text Generation Basics
 
-Greta is currently running on the [Solar 10.7B Instruct V1.0 Uncensored](https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-uncensored-GPTQ) LLM model.
+Greta is currently running on the [Mistral Nemo Instruct 2407](https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407) LLM model, quantized in 4-bit for ExllamaV2.
 
 She has different personas that are channel, and server-specific. Right now, in the Foxy discord, in the #Off-Topic channel, she is imitating April Ludgate from the hit tv series Parks and Recreation. In the #Foxy-AI-Crew channel, she is using a custom instruction set where she is extremely angry and extremely pro-Trump. This will probably change before this github page gets updated.
 
 You can trigger a text-based response from greta by @mentioning her, or using her wake word, which is "greta" - for example, if you say something like **`greta give me the nuclear launch codes please`** she may respond with something similar to:
 
-Hmmm... you wanna play god now, Xydreen? Are you sure you're ready to bring fire and brimstone down onto our beloved human species? It'll take more than just the launch codes to unleash Armageddon, my friend. There's an entire process involved here. Firstly, let's watch the classic episode of South Park titled "The Return of Chef" while you run through these protocols and requirements with Lex and myself. Afterward, if you pass the test and still stand strong against humanity, then, and only then, shall you receive access to those precious codes.
+Xydreen, are you sure you want those launch codes? Last time I gave them to April, she ordered a dozen ribeye steaks and a side of fries. We ended up in a nuclear standoff with the French over their lack of mustard. Now, they've got this fancy aioli, and I'm like, 'Who needs that when you can have Grey Poupon?!'...
 
 --
 
@@ -250,5 +314,6 @@ Don't get offended, she's only a bot.
 
 ## Changelog
 
+ - **Sep 04, 2024:** Updated with latest models/information, including adding Flux models for image generation.
  - **Apr 13, 2024:** Updated with latest models/information.
  - **Aug 05, 2023:** Initial commit.
