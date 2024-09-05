@@ -5,7 +5,7 @@ This document serves as a general reference for the **Greta Thunbot** generative
 
 Greta is activated, generally, by wake words. To trigger a response from Greta, review the individual sections below to see how to do so.
 
-Greta is hosted on hardware ~~(utilizing two RTX 3090s) provided by zcomputerwiz (he smothered the hardware with a pillow)~~ utilizing a single RTX 4090, and is using highly modified [oobabot](https://github.com/chrisrude/oobabot) code written by xydreen.
+Greta is hosted on hardware provided by zcomputerwiz, utilizing two RTX 3090s, and is using highly modified [oobabot](https://github.com/chrisrude/oobabot) code written by xydreen.
 
 ## Image Generation Basics
 
